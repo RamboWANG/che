@@ -57,6 +57,7 @@ public final class DtoConverter {
         return newDto(WorkspaceDto.class).withId(workspace.getId())
                                          .withStatus(workspace.getStatus())
                                          .withNamespace(workspace.getNamespace())
+                                         .withName(workspace.getName())
                                          .withTemporary(workspace.isTemporary())
                                          .withAttributes(workspace.getAttributes())
                                          .withConfig(asDto(workspace.getConfig()))

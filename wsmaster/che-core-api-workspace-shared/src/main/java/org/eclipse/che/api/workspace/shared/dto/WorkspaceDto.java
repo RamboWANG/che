@@ -11,7 +11,6 @@
 package org.eclipse.che.api.workspace.shared.dto;
 
 import org.eclipse.che.api.core.model.workspace.Workspace;
-import org.eclipse.che.api.core.model.workspace.WorkspaceRuntime;
 import org.eclipse.che.api.core.model.workspace.WorkspaceStatus;
 import org.eclipse.che.api.core.rest.shared.dto.Hyperlinks;
 import org.eclipse.che.api.core.rest.shared.dto.Link;
@@ -62,4 +61,8 @@ public interface WorkspaceDto extends Workspace, Hyperlinks {
 
     @Override
     WorkspaceDto withLinks(List<Link> links);
+
+    void setName(String name);
+
+    WorkspaceDto withName(String name);
 }

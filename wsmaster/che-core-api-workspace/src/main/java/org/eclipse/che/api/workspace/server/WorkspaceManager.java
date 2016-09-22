@@ -300,6 +300,7 @@ public class WorkspaceManager {
         requireNonNull(update, "Required non-null workspace update");
         final WorkspaceImpl workspace = workspaceDao.get(id);
         workspace.setConfig(new WorkspaceConfigImpl(update.getConfig()));
+        workspace.setName(update.getName());
         update.getAttributes().put(UPDATED_ATTRIBUTE_NAME, Long.toString(currentTimeMillis()));
         workspace.setAttributes(update.getAttributes());
         return normalizeState(workspaceDao.update(workspace));

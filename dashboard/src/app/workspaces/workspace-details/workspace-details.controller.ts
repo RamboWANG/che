@@ -105,7 +105,7 @@ export class WorkspaceDetailsController {
     angular.copy(this.workspaceDetails, this.copyWorkspaceDetails);
 
     this.workspaceId = this.workspaceDetails.id;
-    this.newName = this.workspaceDetails.config.name;
+    this.newName = this.workspaceDetails.name;
   }
 
   /**
@@ -114,7 +114,7 @@ export class WorkspaceDetailsController {
    */
   isNameChanged() {
     if (this.workspaceDetails) {
-      return this.workspaceDetails.config.name !== this.newName;
+      return this.workspaceDetails.name !== this.newName;
     }
     return false;
   }
@@ -128,7 +128,7 @@ export class WorkspaceDetailsController {
       return;
     }
 
-    this.copyWorkspaceDetails.config.name = this.newName;
+    this.copyWorkspaceDetails.name = this.newName;
     this.doUpdateWorkspace();
   }
 
