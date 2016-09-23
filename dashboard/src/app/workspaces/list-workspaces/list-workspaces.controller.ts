@@ -32,7 +32,7 @@ export class ListWorkspacesCtrl {
 
     this.state = 'loading';
     this.isInfoLoading = true;
-    this.workspaceFilter = {config: {name: ''}};
+    this.workspaceFilter = {name: ''};
 
     //Map of all workspaces with additional info by id:
     this.workspacesById = new Map();
@@ -227,7 +227,7 @@ export class ListWorkspacesCtrl {
         this.workspacesSelectedStatus[workspaceId] = false;
 
         let workspace = this.cheWorkspace.getWorkspaceById(workspaceId);
-        workspaceName = workspace.config.name;
+        workspaceName = workspace.name;
         let stoppedStatusPromise = this.cheWorkspace.fetchStatusChange(workspaceId, 'STOPPED');
 
         // stop workspace if it's status is RUNNING

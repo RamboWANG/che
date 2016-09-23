@@ -205,7 +205,7 @@ export class ProjectDetailsController {
       // remove it !
       let promise = this.projectService.remove(this.projectDetails.name);
       promise.then(() => {
-        this.$location.path('/workspace/' + this.workspace.namespace + '/' + this.workspace.config.name + '/projects');
+        this.$location.path('/workspace/' + this.workspace.namespace + '/' + this.workspace.name + '/projects');
       }, (error) => {
         this.$log.log('error', error);
       });

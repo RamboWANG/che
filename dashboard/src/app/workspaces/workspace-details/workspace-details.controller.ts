@@ -155,7 +155,7 @@ export class WorkspaceDetailsController {
 
     let promise = this.cheWorkspace.updateWorkspace(this.workspaceId, this.copyWorkspaceDetails);
     promise.then((data) => {
-      this.workspaceName = data.config.name;
+      this.workspaceName = data.name;
       this.updateWorkspaceData();
       this.cheNotification.showInfo('Workspace updated.');
       return this.$location.path('/workspace/' + this.namespace + '/' + this.workspaceName);
@@ -171,7 +171,7 @@ export class WorkspaceDetailsController {
   //Perform workspace deletion.
   deleteWorkspace(event) {
     let confirm = this.$mdDialog.confirm()
-      .title('Would you like to delete workspace \'' + this.workspaceDetails.config.name + '\'?')
+      .title('Would you like to delete workspace \'' + this.workspaceDetails.name + '\'?')
       .ariaLabel('Delete workspace')
       .ok('Delete it!')
       .cancel('Cancel')

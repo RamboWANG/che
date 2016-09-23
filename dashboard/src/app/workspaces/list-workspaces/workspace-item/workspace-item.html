@@ -21,7 +21,7 @@
          ng-if="workspaceItemCtrl.isSelectable === true">
       <che-list-item-checked ng-model="workspaceItemCtrl.isSelect"
                              ng-show="('RUNNING' === workspaceItemCtrl.getWorkspaceStatus() || 'STOPPED' === workspaceItemCtrl.getWorkspaceStatus())"
-                             che-aria-label-checkbox="Workspace {{workspaceItemCtrl.workspace.config.name}}"
+                             che-aria-label-checkbox="Workspace {{workspaceItemCtrl.workspace.name}}"
                              ng-click="workspaceItemCtrl.onCheckboxClick()"></che-list-item-checked>
     </div>
     <div flex
@@ -61,7 +61,7 @@
         <span class="che-xs-header noselect" hide-gt-xs>Actions</span>
         <span class="che-list-actions">
           <che-workspace-status che-workspace-item="workspaceItemCtrl.workspace"></che-workspace-status>
-          <a ng-href="#/workspace/{{workspaceItemCtrl.workspace.namespace}}/{{workspaceItemCtrl.workspace.config.name}}/projects"
+          <a ng-href="#/workspace/{{workspaceItemCtrl.workspace.namespace}}/{{workspaceItemCtrl.workspace.name}}/projects"
              tooltip="Configure workspace">
             <span class="fa fa-cog"></span>
           </a>

@@ -127,7 +127,7 @@ export class CheWorkspace {
 
   getWorkspaceByName(namespace, name) {
     return this.lodash.find(this.workspaces, (workspace) => {
-      return workspace.namespace === namespace && workspace.config.name === name;
+      return workspace.namespace === namespace && workspace.name === name;
     });
   }
 
@@ -410,7 +410,7 @@ export class CheWorkspace {
       let projects = workspace.config.projects;
       projects.forEach((project) => {
         project.workspaceId = workspace.id;
-        project.workspaceName = workspace.config.name;
+        project.workspaceName = workspace.name;
       });
 
       workspaceProjects[workspace.id] = projects;

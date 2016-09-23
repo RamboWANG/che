@@ -28,7 +28,7 @@ export class CheWorkspaceBuilder {
   }
 
   withName(name) {
-    this.workspace.config.name = name;
+    this.workspace.name = name;
     return this;
   }
 

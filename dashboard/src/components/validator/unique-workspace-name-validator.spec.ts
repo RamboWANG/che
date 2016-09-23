@@ -78,7 +78,7 @@ describe('unique-workspace-name-validator', function() {
 
       var element = angular.element(
         '<form name="form">' +
-        '<input ng-model="model.workspaceName" name="name" unique-workspace-name="workspace2.config.name" />' +
+        '<input ng-model="model.workspaceName" name="name" unique-workspace-name="workspace2.name" />' +
         '</form>'
       );
       $compiler(element)($scope);
@@ -117,7 +117,7 @@ describe('unique-workspace-name-validator', function() {
 
       var element = angular.element(
         '<form name="form">' +
-        '<input ng-model="model.workspaceName" name="name" unique-workspace-name="workspace2.config.name" />' +
+        '<input ng-model="model.workspaceName" name="name" unique-workspace-name="workspace2.name" />' +
         '</form>'
       );
       $compiler(element)($scope);

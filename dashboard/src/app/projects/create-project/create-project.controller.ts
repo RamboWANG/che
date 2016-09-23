@@ -216,7 +216,7 @@ export class CreateProjectController {
     if (this.createProjectSvc.isCreateProjectInProgress() && this.createProjectSvc.getCurrentProgressStep() > 0) {
       let workspaceName = this.createProjectSvc.getWorkspaceOfProject();
       let findWorkspace = this.lodash.find(this.workspaces, (workspace) => {
-        return workspace.config.name === workspaceName;
+        return workspace.name === workspaceName;
       });
       //check current workspace
       if (findWorkspace) {
@@ -841,7 +841,7 @@ export class CreateProjectController {
       // reuse existing workspace
       this.recipeUrl = null;
       this.stack = null;
-      this.createProjectSvc.setWorkspaceOfProject(this.workspaceSelected.config.name);
+      this.createProjectSvc.setWorkspaceOfProject(this.workspaceSelected.name);
       this.createProjectSvc.setWorkspaceNamespace(this.workspaceSelected.namespace);
       this.checkExistingWorkspaceState(this.workspaceSelected);
     } else {
@@ -1102,7 +1102,7 @@ export class CreateProjectController {
     if (!this.workspaceSelected) {
       return;
     }
-    this.setWorkspaceName(this.workspaceSelected.config.name);
+    this.setWorkspaceName(this.workspaceSelected.name);
     let stack = null;
     if (this.workspaceSelected.attributes && this.workspaceSelected.attributes.stackId) {
       stack = this.cheStack.getStackById(this.workspaceSelected.attributes.stackId);

@@ -42,7 +42,7 @@ describe('CheWorkspaceBuilder', function(){
 
 
     // check values
-    expect(workspace.config.name).toEqual(name);
+    expect(workspace.name).toEqual(name);
 
   });
 
@@ -58,7 +58,7 @@ describe('CheWorkspaceBuilder', function(){
 
 
     // check values
-    expect(workspace.config.name).toEqual(name);
+    expect(workspace.name).toEqual(name);
     expect(workspace.id).toEqual(id);
     expect(workspace.config.temporary).toBeTruthy();
 

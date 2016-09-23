@@ -60,7 +60,7 @@ export class CreateWorkspaceController {
     cheAPI.cheWorkspace.fetchWorkspaces().then(() => {
       let workspaces = cheAPI.cheWorkspace.getWorkspaces();
       workspaces.forEach((workspace) => {
-        this.usedNamesList.push(workspace.config.name);
+        this.usedNamesList.push(workspace.name);
       });
     });
 
@@ -221,10 +221,10 @@ export class CreateWorkspaceController {
       // for new workspace to show in recent workspaces
       this.updateRecentWorkspace(workspaceData.id);
 
-      let infoMessage = 'Workspace ' + workspaceData.config.name + ' successfully created.';
+      let infoMessage = 'Workspace ' + workspaceData.name + ' successfully created.';
       this.cheNotification.showInfo(infoMessage);
       this.cheAPI.cheWorkspace.fetchWorkspaces().then(() => {
-        this.$location.path('/workspace/' + workspaceData.namespace + '/' +  workspaceData.config.name);
+        this.$location.path('/workspace/' + workspaceData.namespace + '/' +  workspaceData.name);
       });
     }, (error) => {
       let errorMessage = error.data.message ? error.data.message : 'Error during workspace creation.';

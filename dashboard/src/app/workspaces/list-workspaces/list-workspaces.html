@@ -17,7 +17,7 @@
                       ng-show="listWorkspacesCtrl.isInfoLoading"></md-progress-linear>
   <md-content flex class="workspace-list-content" ng-hide="listWorkspacesCtrl.isInfoLoading">
     <che-list-header che-input-placeholder="Search"
-                     che-search-model="listWorkspacesCtrl.workspaceFilter.config.name"
+                     che-search-model="listWorkspacesCtrl.workspaceFilter.name"
                      che-hide-search="listWorkspacesCtrl.userWorkspaces.length === 0"
                      che-add-button-title="Add Workspace"
                      che-add-button-href="#/create-workspace"
@@ -44,7 +44,7 @@
              class="che-list-item-details">
           <che-list-header-column flex-gt-xs="25"
                                   che-sort-value='listWorkspacesCtrl.workspaceOrderBy'
-                                  che-sort-item='config.name'
+                                  che-sort-item='name'
                                   che-column-title='Name'></che-list-header-column>
           <che-list-header-column flex-gt-xs="15"
                                   che-sort-value='listWorkspacesCtrl.workspaceOrderBy'
@@ -65,7 +65,7 @@
     </che-list-header>
     <che-list ng-show="(listWorkspacesCtrl.userWorkspaces | filter:listWorkspacesCtrl.workspaceFilter).length > 0">
       <che-workspace-item
-              ng-repeat="workspace in listWorkspacesCtrl.userWorkspaces | orderBy:[listWorkspacesCtrl.workspaceOrderBy, 'config.name'] | filter:listWorkspacesCtrl.workspaceFilter"
+              ng-repeat="workspace in listWorkspacesCtrl.userWorkspaces | orderBy:[listWorkspacesCtrl.workspaceOrderBy, 'name'] | filter:listWorkspacesCtrl.workspaceFilter"
               ng-model="listWorkspacesCtrl.workspacesSelectedStatus[workspace.id]"
               che-selectable="true"
               che-display-labels="false"

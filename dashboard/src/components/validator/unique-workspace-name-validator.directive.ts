@@ -51,10 +51,10 @@ export class UniqueWorkspaceNameValidator {
         if (workspaces.length) {
 
           for (let i=0; i<workspaces.length; i++) {
-            if (workspaces[i].config.name === currentWorkspaceName) {
+            if (workspaces[i].name === currentWorkspaceName) {
               continue;
             }
-            if (workspaces[i].config.name === modelValue) {
+            if (workspaces[i].name === modelValue) {
               deferred.reject(false);
             }
           }

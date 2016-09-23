@@ -105,7 +105,7 @@ export class NavbarRecentWorkspacesController {
    */
   getWorkspaceName(workspaceId) {
     let workspace = this.cheWorkspace.getWorkspaceById(workspaceId);
-    return workspace ? workspace.config.name : 'unknown';
+    return workspace ? workspace.name : 'unknown';
   }
 
   /**
@@ -124,7 +124,7 @@ export class NavbarRecentWorkspacesController {
    */
   getIdeLink(workspaceId) {
     let workspace = this.cheWorkspace.getWorkspaceById(workspaceId);
-    return '#/ide/' + (workspace ? (workspace.namespace + '/' + workspace.config.name) : 'unknown');
+    return '#/ide/' + (workspace ? (workspace.namespace + '/' + workspace.name) : 'unknown');
   }
 
   /**

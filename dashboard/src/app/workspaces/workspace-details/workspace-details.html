@@ -1,7 +1,7 @@
-<che-toolbar che-title="{{workspaceDetailsCtrl.workspaceDetails.config.name}}"
+<che-toolbar che-title="{{workspaceDetailsCtrl.workspaceDetails.name}}"
              che-title-icons-controller="workspaceDetailsCtrl"
              che-button-name="Open"
-             che-button-href="#/ide/{{workspaceDetailsCtrl.workspaceDetails.namespace}}/{{workspaceDetailsCtrl.workspaceDetails.config.name}}"
+             che-button-href="#/ide/{{workspaceDetailsCtrl.workspaceDetails.namespace}}/{{workspaceDetailsCtrl.workspaceDetails.name}}"
              che-breadcrumb-title="All workspaces"
              che-breadcrumb-href="#/workspaces">
 </che-toolbar>
@@ -31,7 +31,7 @@
                            ng-change="workspaceDetailsCtrl.updateName(workspaceNameForm.$valid)"
                            ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 2000, 'blur': 0 } }"
                            required
-                           unique-workspace-name="workspaceDetailsCtrl.workspaceDetails.config.name"
+                           unique-workspace-name="workspaceDetailsCtrl.workspaceDetails.name"
                            ng-maxlength="128"
                            ng-pattern="/^[A-Za-z0-9_\-\.]+$/">
                   <div ng-message="required">A name is required.</div>
